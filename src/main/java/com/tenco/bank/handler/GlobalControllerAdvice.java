@@ -65,7 +65,6 @@ public class GlobalControllerAdvice {
 	 */
 	@ExceptionHandler(RedirectException.class)
 	public ModelAndView redirectException(RedirectException e) {
-		System.out.println("들어옴 222222222222");
 		ModelAndView modelAndView = new ModelAndView("errorPage");
 		modelAndView.addObject("statusCode", e.getStatus().value());
 		modelAndView.addObject("message", e.getMessage());

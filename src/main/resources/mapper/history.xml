@@ -14,7 +14,8 @@
 			w_balance = #{wBalance},
 			d_balance = #{dBalance},
 			w_account_id = #{wAccountId},
-			d_account_id = #{dAccountId},
+			d_account_id = #{dAccountId}
+			where id = #{id}
 	</update>
 	
 	<delete id="deleteById">
