@@ -6,11 +6,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.tenco.bank.dto.SaveDTO;
 import com.tenco.bank.dto.SignInDTO;
 import com.tenco.bank.dto.SignUpDTO;
 import com.tenco.bank.handler.exception.DataDeliveryException;
 import com.tenco.bank.handler.exception.RedirectException;
 import com.tenco.bank.repository.interfaces.UserRepository;
+import com.tenco.bank.repository.model.Account;
 import com.tenco.bank.repository.model.User;
 
 @Service // IoC 대상( 싱글톤으로 관리)
@@ -65,4 +67,5 @@ public class UserService {
 		}
 		return userEntity;
 	}
+	
 }
