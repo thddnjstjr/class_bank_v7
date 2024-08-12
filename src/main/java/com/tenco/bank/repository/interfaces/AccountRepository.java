@@ -11,7 +11,7 @@ import com.tenco.bank.repository.model.Account;
 public interface AccountRepository {
 	public int insert(Account account);
 	public int updateById(Account account);
-	public int deleteById(Integer id);
+	public int deleteById(Integer id,String name);
 	
 	// interface 파라미터명과 xml 에 사용할 변수명을 다르게 사용해야 된다면 @param 애노테이션을
 	// 사용할 수 있다. 그리고 2개 이상에 파라미터를 사용할 경우 반드시 사용하자!
@@ -19,4 +19,6 @@ public interface AccountRepository {
 	// --> account id 값으로 계좌 정보 조회
 	public Account findByNumber(@Param("number") String id);
 	
+	// 코드 추가 예정
+	public Account findByAccountId(Integer accountId);
 }

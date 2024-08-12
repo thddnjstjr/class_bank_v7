@@ -21,8 +21,8 @@
 				<tbody>
 					<c:forEach var="account" items="${accountList}">
 						<tr>
-							<td>${account.number}</td>
-							<td>${account.balance}</td>
+							<td><a href="/account/detail/${account.id}?type=all">${account.number}</a></td>
+							<td>${account.formatKoreanWon(account.balance)}</td>
 						</tr>					
 					</c:forEach>
 				</tbody>
