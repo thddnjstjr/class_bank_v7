@@ -204,9 +204,16 @@ public class AccountService {
 	 *  단일 계좌 거래 내역 조회
 	 *  @return 전체, 입금, 출금 거래내역(3가지 타입) 반환
 	 */
-	public List<HistoryAccount> readHistoryByAccountId(String type,Integer accountId) {
+	public List<HistoryAccount> readHistoryByAccountId(String type,Integer accountId,Integer page, Integer size) {
 		List<HistoryAccount> list = new ArrayList<>();
-		list = historyRepository.findByAccountIdAndTypeOfHistory(type, accountId);
+		int limit = size;
+		int offset = (page - 1) * size;
+		list = historyRepository.findByAccountIdAndTypeOfHistory(type, accountId,limit,offset);
 		return list;
+	}
+	
+	public int countHistoryByAccountIdAndType(String type, Integer accountId) {
+		
+		return historyRepository.countByAccountIdAndType(type, accountId);
 	}
 }
